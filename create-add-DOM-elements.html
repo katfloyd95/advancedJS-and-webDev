@@ -1,0 +1,54 @@
+<!-- CREATING AND ADDING ELEMENTS TO THE DOM -->
+
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+  <title>DOM Practice</title>
+</head>
+
+<body>
+    <h1>DOM Practice</h1>
+    <div class = "container" style = "background-color: bisque;">
+      <p>This is a JS object that represents out HTML 1:1!</p>
+      <p>It's where HTML, CSS, and JS come together</p>
+    </div>
+</body>
+
+<script>
+
+  // In the console:
+
+  // var button = document.createElement('button'); // creates the button
+  // > undefined
+
+  // button
+  // > <button>​</button>​
+
+  // document.body.appendChild(button); // attaches button to the body
+  // > <button>​</button>​
+
+  // button.textContent = 'click me' // inserts button text
+  // > 'click me'
+
+  // button.classList.add("my-button")
+  // > undefined
+  // button.style.backgroundColor = 'black';
+  // > 'black'
+  // button.style.color = "white";
+  // > 'white'
+
+  // Creating in Editor:
+  var myNewP = document.createElement('p');
+  myNewP.textContent = 'This is a dynamic paragraph';
+  document.body.appendChild(myNewP);
+
+  // Delete:
+  myNewP.remove();
+
+  var container = document.getElementsByClassName('container')[0];
+  container.appendChild(myNewP); // this added myNewP into the div, so it takes on all of the style properties associated with that div; put inside, BUT AT THE END
+
+</script>
+
+</html>
