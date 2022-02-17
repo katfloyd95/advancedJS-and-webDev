@@ -1,0 +1,63 @@
+<!-- DOM BASICS -->
+
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+  <title>DOM Practice</title>
+</head>
+
+<body>
+  <h1 style = "color: blue;">DOM Practice</h1>
+  <p>This is a JS object that represents out HTML 1:1!</p>
+  <p>It's where HTML, CSS, and JS come together</p>
+</body>
+
+<script>
+
+  // What is the DOM?
+
+  // The 'document object', when you type 'document' in the console.
+  // What is so cool about the DOM, is that is has many methods attached to it 'document.method' as well as properties. 
+  
+  // We call these methods and properties the DOM API.
+  // A way to access the HTML and CSS on our page with JS.
+
+
+  // Select, Create, Read, Update, Delete
+
+  // SELECTING FROM THE DOM
+  // In the console:
+  // document.getElementByTagName('h1')
+  // var myHeader = document.getElementsByTagName('h1')[0]
+
+  // myHeader
+  // > <h1>DOM Practice</h1>
+
+  // myHeader.style
+  // output: shows all the different CSS attributes
+
+  // myHeader.style.color
+  // outputs "blue", since it was styled in the <h1></h1> tag
+
+  // UPDATING THE DOM
+  // In the console:
+  // myHeader.style.color = "green"
+  // changes the color of the h1 element from blue to green
+
+  // This changes the color of the title from blue to green and vice versa every 2 seconds
+  var myHeader = document.getElementsByTagName('h1')[0];
+
+  setInterval(function() {
+    if (myHeader.style.color === "blue") {
+      myHeader.style.color = "green";
+    } else {
+      myHeader.style.color = "blue";
+    }
+  }, 2000);
+
+
+</script>
+
+</html>
+
