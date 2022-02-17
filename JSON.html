@@ -1,0 +1,54 @@
+<!-- JSON -->
+
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+  <title>Sending data as strings</title>
+</head>
+<body>
+  <h1>JSON</h1>
+  <div class = "container">
+    <p>Sending data as a string</p>
+  </div>
+</body>
+<script>
+
+  var obj = {
+    a: 1
+  };
+
+  var jsonObj = `{
+    "a": 1;
+  }`;
+
+</script>
+</html>
+
+<!--
+  JSON: JavaScript Object Notation
+
+  - Called this because of the syntax of JS and JSON with 
+  objects and values are the same.
+  - This is great because it makes it easy for us to convert
+  objects to JSON and back
+
+  - You cannot send a JS object over a network or through an
+  API, but we instead have to send strings
+
+  In the console:
+
+    To convert an object to a string:
+    var obj = {a: 1};
+    > undef
+
+    JSON.stringify(obj)
+    > '{"a": 1}'
+
+    To convert a string to an object:
+    var strObj = JSON.stringify(obj)
+    > undef
+
+    JSON.parse(strObj)
+    > undef
+
+ -->
