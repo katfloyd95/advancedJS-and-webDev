@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+  <title>DOM Practice</title>
+</head>
+
+<body>
+    <h1>DOM Practice</h1>
+    <div class = "container">
+      <p>This is a JS object that represents out HTML 1:1!</p>
+      <p>It's where HTML, CSS, and JS come together</p>
+    </div>
+    <button>Click me!</button>
+</body>
+
+<script>
+// DOM
+
+var button = document.querySelector('button'); // exact CSS selector syntax; will also only select the first button on the page, otherwise you have to use an index e.g. ...('button')[i]
+var paragraphs = document.querySelectorAll('p'); // selects all paragraphs elements in the document
+var container = document.querySelector('.container p:first-of-type');
+
+// You NEED to make sure that you use querySelector in the document to select the element on which you want to attach an event listener to
+
+// Event Listeners
+// button.addEventListener('click', function() {
+//   for (let p of paragraphs) {
+//     p.style.color = "orange";
+//   }
+// })
+
+button.addEventListener('click', function() {
+  container.style.color = 'red';
+})
+
+</script>
+
+<!-- 
+  OTHER COMMON EVENT LISTENERS (mozilla dev list)
+
+  - focus (element recieves focus, does not bubble)
+  - blur (element loses focus)
+  - In form events: reset and submit
+  - Keyboard events: keydown, keyup, keypress
+    An example of this is in google search, whenever a key is pressed (besides SHIFT ENTER etc. 'keypress'), a new list of search suggestions loads underneath the search bar. An autocomplete search
+  - Mouse events
+
+ -->
+
+</html>
