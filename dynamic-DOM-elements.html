@@ -1,0 +1,39 @@
+<!-- DYNAMIC DOM ELEMENTS -->
+
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+  <title>DOM Practice</title>
+</head>
+
+<body>
+    <h1>DOM Practice</h1>
+    <div class = "container" style = "background-color: bisque;">
+    </div>
+</body>
+
+<script>
+
+var response = {
+  body: [
+    "This is a JS object that represents out HTML 1:1!",
+    "It's where HTML, CSS, and JS come together"
+  ]
+}
+
+// Creating elements from JSON
+
+let container = document.getElementsByClassName('container')[0]; // this will return an html collection, which is like an array, so you need [0] at the end
+
+for (let i = 0; i < response.body.length; i++) {
+  let myP = document.createElement('p');
+  myP.textContent = response.body[i];
+  myP.classList.add('body-paragraph');
+  myP.style.color = "orange";
+  container.appendChild(myP);
+}
+
+</script>
+
+</html>
