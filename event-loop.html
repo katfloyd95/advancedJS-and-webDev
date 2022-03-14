@@ -1,0 +1,16 @@
+<!-- EVENT LOOP -->
+
+<!-- 
+
+  Javascript is run by the V8 Engine
+
+  JS is a Single-Threaded Language:
+  - This means that JS runs only one line at a time
+  - For 3 files, those are going to run, one after the other, top to bottom
+  - Other languages like Java, can run 4 different files (or threads) at the same time
+
+  Problems that arise with a Single-threaded Language Example:
+  - Someone could click something, and the server could be slow (like 30s). So if that person clicks another event listener while that request is processing, there can eventually become so many clicks in line to be processed that cannot happen until the previous request finishes.
+  - JS resolves this with something called an EVENT LOOP
+
+ -->
