@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Javascript Libraries</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+      .vanilla-p {
+        color: darkkhaki;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Libraries are really amazing</h1>
+    <ol class = "container">
+      <p>Let's write some jQuery</p>
+    </ol>
+    <button id = 'dom'>Click Me</button>
+    <button id = 'jquery'>Click Me</button>
+
+  </body>
+  <script>
+    // DOM
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is vanilla content';
+    newParagraph.classList.add('vanilla-p');
+    document.querySelector('.container').appendChild(newParagraph);
+
+    // jQuery
+    $(`<p>This is a jQuery paragraph.</p>`)
+      .addClass('jq-p')
+      .appendTo($('.container'));
+
+    // Alternative:
+    $('.container')
+      .append(
+        $(`<p>This is a jQuery paragraph.</p>`)
+        .addClass('jq-p')
+        .css('color', 'orange')
+      )
+
+    // Second Alternative:
+    var newP = $(`<p>This is a jQuery paragraph.</p>`)
+        .addClass('jq-p')
+        .css('color', 'blue')
+    $('.container').append(newP);
+    // or:
+    newP.appendTo($('.container'));
+
+  </script>
+</html>
