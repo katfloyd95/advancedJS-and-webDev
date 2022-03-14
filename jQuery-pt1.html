@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Javascript Libraries</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>Libraries are really amazing</h1>
+    <ol class = "container">
+      <p>Let's write some jQuery</p>
+      <p>NOTE: The '$' in your Shopify theme files is JQUERY.</p>
+      <p>The '$' replaces 'document.querySelector', but it is not EXACTLY the same. The 'document.querySelector' create DOM element, whereas the '$' creates a jQuery HTML element.</p>
+      <p>This essentially means that under the hood, they each have a different set of methods. Don't use DOM methods on a jQuery element, and don't use jQuery methods on a DOM element</p>
+      <p>Don't use jQuery too much, rather just follow the patterns of the theme code</p>
+      <p></p>
+    </ol>
+    <button id = 'dom'>Click Me</button>
+    <button id = 'jquery'>Click Me</button>
+
+  </body>
+  <script>
+    // DOM
+    var btn = document.querySelector('button');
+    btn.style.backgroundColor = 'bisque';
+    var p = document.querySelector('p');
+    btn.addEventListener('click', function() {
+      if (p.style.display === "none") {
+        p.style.display = 'block';
+      } else {
+        p.style.display = "none";
+      }
+    })
+
+    // jQuery
+    // var btn2 = $('#jquery');
+    // btn2.css('backgroundColor', 'red');
+
+    // Also works:
+    $('#jquery').on('click', function() {
+      $('p').toggle();
+    });
+
+  </script>
+</html>
