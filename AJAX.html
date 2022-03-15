@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <title>AJAX Requests</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <h3>Asynchronous Javascript and XML</h3>
+    <ol id = "demo"></ol>
+    <h4>XMLHttpRequest Object</h4>
+    <ul>
+      <li>Can update a page without reloading the page</li>
+      <li>Request data from a server after the page is loaded</li>
+      <li>Receive data from a server after the page is loaded</li>
+      <li>Send data to a server in the background</li>
+    </ul>
+    <script>
+
+      // VANILLA HTTP REQUEST: /////////////////////////
+      // // creates the request:
+      // var xhttp = new XMLHttpRequest();
+      // // this function will run everytime the state of the request changes, so that is why we have the if statement
+      // xhttp.onreadystatechange = function() {
+      //   console.log('Ran inner function');
+      //   if (this.readyState == 4 && this.status == 200) {
+      //     // Typical action to be performed when the document is ready:
+      //     document.getElementById("demo").innerHTML = xhttp.responseText;
+      //   }
+      // };
+      // // xhttp.open(method, url, async or not)
+      // xhttp.open("GET", "https://remoteok.com/api", true);
+      // // in most cases you will want it to be async, so it's not blocking
+      // xhttp.send();
+      ///////////////////////////////////////////////////
+
+      //// AJAX REQUEST /////////////////////////////////
+
+      $.ajax({
+        url: 'https://remoteok.com/api',
+        success: function(data) {
+          for (var job of data) {
+            $(`<li>${job.company}</li>`).appendTo("#demo");
+          }
+        }
+      })
+    
+    </script>
+
+  </body>
+  <script>
+
+  </script>
+</html>
